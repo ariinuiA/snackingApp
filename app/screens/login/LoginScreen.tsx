@@ -1,6 +1,6 @@
 import React from 'react'
-import { Alert, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import AppNavigator from '../../app.navigator';
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { login_style } from './login.style';
 
 
 interface LoginSCreenProps{
@@ -15,33 +15,34 @@ const LoginScreen = (props: LoginSCreenProps) => {
 
     return (
         <KeyboardAvoidingView
-            style={styles.container}
+            style={login_style.container}
             behavior="padding" 
         >
-        <View style={styles.inputContainer}>
+        <View style={login_style.inputContainer}>
         <TextInput
             placeholder="Email"
-            style={styles.input}
+            style={login_style.input}
         />
         <TextInput
             placeholder="Password"
-            style={styles.input}
+            style={login_style.input}
             secureTextEntry
         />
         </View>
 
-        <View style={styles.buttonContainer}>
+        <View style={login_style.buttonContainer}>
             <TouchableOpacity
                 onPress = {login}
-                style={styles.button}
+                style={login_style.button}
             >
-                <Text style={styles.buttonText}>Login</Text>
+                <Text style={login_style.buttonText}>Login</Text>
             </TouchableOpacity>
+            
             <TouchableOpacity
                 onPress = {register}
-                style={[styles.button, styles.buttonOutline]}
+                style={[login_style.button, login_style.buttonOutline]}
             >
-                <Text style={styles.buttonOutlineText}>Register</Text>
+                <Text style={login_style.buttonOutlineText}>Register</Text>
             </TouchableOpacity>
         </View>
         </KeyboardAvoidingView>
@@ -50,57 +51,3 @@ const LoginScreen = (props: LoginSCreenProps) => {
 
 export default LoginScreen
 
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        justifyContent: 'center',
-        alignItems:'center',
-    },
-
-    inputContainer:{
-        width:'80%'
-    },
-
-    input:{
-        backgroundColor: 'white',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
-        borderRadius: 10,
-        marginTop: 5,
-    },
-
-    buttonContainer:{
-        width: '60%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 40,
-    },
-
-    button:{
-        backgroundColor: '#0782F9',
-        width: '100%',
-        padding: 15,
-        borderRadius: 10,
-        alignItems: 'center',
-    },
-
-    buttonOutline:{
-        backgroundColor: 'white',
-        marginTop: 5,
-        borderColor: '#0782F9',
-        borderWidth: 2
-    },
-
-    buttonText:{
-        color:'white',
-        fontWeight: '700',
-        fontSize: 16,
-    },
-
-    buttonOutlineText:{
-        color:'#0782F9',
-        fontWeight: '700',
-        fontSize: 16,
-    },
-
-})

@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View, Image, Button } from 'react-native';
+import { Text, TouchableOpacity, View, Alert } from 'react-native';
 import React from 'react';
 import { paymentStyle } from './payment.style';
 
@@ -21,6 +21,9 @@ const PaymentScreen = (props: PaymentScreenProps) => {
         </TouchableOpacity>
         <TouchableOpacity style={paymentStyle.button}>
           <Text style={paymentStyle.buttonText}>Credits</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={paymentStyle.button} onPress={() => Alert.alert("Nice try!")}>
+          <Text style={paymentStyle.buttonText}>Voler un produit</Text>
         </TouchableOpacity>
       </View>
     </View>

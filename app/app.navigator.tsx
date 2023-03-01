@@ -5,6 +5,9 @@ import LoginScreen from "./screens/login/LoginScreen";
 import RegisterScreen from "./screens/register/RegisterScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import SelectionScreen from "./screens/produits_selection/SelectionScreen";
+import PaymentScreen from "./screens/payment/PaymentScreen";
+import AdminScreen from "./screens/admin/AdminScreen";
+import ChargeAccountScreen from "./screens/ChargeAccount/ChargeAccountScreen";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -15,6 +18,9 @@ const AppNavigator = () => (
             <Screen name="Register" component={RegisterScreen}/>
             <Screen name="Home" component={HomeScreen}/>
             <Screen name="Selection" component={SelectionScreen}/>
+            <Screen name="Payment" component={PaymentScreen}/>
+            <Screen name="Admin" component={AdminScreen}/>
+            <Screen name="ChargeAccount" component={ChargeAccountScreen}/>
         </Navigator>
     </NavigationContainer>
 
